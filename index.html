@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -15,28 +17,36 @@
 
     <title>DarkSystems Store</title>
 
-    <!-- Website Icon -->
+
+    <!--
+        Verhindert, dass der Browser beim Reload
+        die alte Scrollposition wiederherstellt.
+    -->
+    <script>
+        if ("scrollRestoration" in history) {
+            history.scrollRestoration = "manual";
+        }
+    </script>
+
+
+    <!-- Favicon -->
     <link
         rel="icon"
         href="images/favicon.png"
     >
 
-    <script>
-        if ("scrollRestoration" in history) {
-            history.scrollRestoration = "manual";
-        }
 
-        window.scrollTo(0, 0);
-    </script>
-    
-    <!-- Main stylesheet -->
+    <!-- Main CSS -->
     <link
         rel="stylesheet"
         href="css/style.css"
     >
+
 </head>
 
+
 <body>
+
 
     <!-- =====================================================
          HEADER
@@ -46,33 +56,61 @@
 
         <div class="container header-inner">
 
+
             <!-- Logo -->
+
             <a
                 href="index.html"
                 class="logo"
                 aria-label="DarkSystems Startseite"
             >
-                <span class="logo-mark">D</span>
-                <span>DarkSystems</span>
+
+                <span class="logo-mark">
+                    D
+                </span>
+
+                <span>
+                    DarkSystems
+                </span>
+
             </a>
 
 
+
             <!-- Navigation -->
+
             <nav
                 class="main-nav"
                 aria-label="Hauptnavigation"
             >
-                <a href="#products">Produkte</a>
-                <a href="#categories">Kategorien</a>
-                <a href="#offers">Angebote</a>
-                <a href="#about">Über DarkSystems</a>
+
+                <a href="#products">
+                    Produkte
+                </a>
+
+                <a href="#categories">
+                    Kategorien
+                </a>
+
+                <a href="#offers">
+                    Angebote
+                </a>
+
+                <a href="#about">
+                    Über DarkSystems
+                </a>
+
             </nav>
 
 
-            <!-- Header Actions -->
+
+            <!-- Header Buttons -->
+
             <div class="header-actions">
 
-                <!-- Search -->
+
+                <!-- Suche -->
+
                 <button
                     class="icon-button"
                     type="button"
@@ -83,36 +121,45 @@
                 </button>
 
 
-                <!-- Theme -->
+
+                <!-- Dark / Light Mode -->
+
                 <button
                     class="icon-button"
                     id="themeToggle"
                     type="button"
-                    aria-label="Darstellung wechseln"
+                    aria-label="Dark Mode"
                     title="Dark / Light Mode"
                 >
                     🌙
                 </button>
 
 
-                <!-- Cart -->
+
+                <!-- Warenkorb -->
+
                 <button
                     class="icon-button cart-button"
                     type="button"
                     aria-label="Warenkorb"
                     title="Warenkorb"
                 >
+
                     🛒
+
                     <span
                         class="cart-count"
                         id="cartCount"
                     >
                         0
                     </span>
+
                 </button>
 
 
-                <!-- Mobile menu -->
+
+                <!-- Mobile Menü -->
+
                 <button
                     class="icon-button mobile-menu-button"
                     type="button"
@@ -130,7 +177,12 @@
 
 
 
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
     <main>
+
 
         <!-- =================================================
              HERO
@@ -140,7 +192,11 @@
 
             <div class="container hero-inner">
 
+
+                <!-- Hero Text -->
+
                 <div class="hero-content">
+
 
                     <div class="hero-eyebrow">
                         DarkSystems
@@ -149,13 +205,18 @@
 
                     <h1>
                         Technology.<br>
-                        <span>Reimagined.</span>
+                        <span>
+                            Reimagined.
+                        </span>
                     </h1>
 
 
                     <p class="hero-description">
-                        Entdeckt eine neue Generation smarter Technologie.
-                        Leistungsstark, elegant und entwickelt für den Alltag.
+
+                        Entdeckt eine neue Generation smarter
+                        Technologie. Leistungsstark, elegant
+                        und entwickelt für den Alltag.
+
                     </p>
 
 
@@ -167,6 +228,7 @@
                         >
                             Produkte entdecken
                         </a>
+
 
                         <a
                             href="#categories"
@@ -180,7 +242,8 @@
                 </div>
 
 
-                <!-- Hero Product -->
+
+                <!-- Hero Produkt -->
 
                 <div class="hero-product">
 
@@ -198,7 +261,7 @@
 
 
         <!-- =================================================
-             CATEGORIES
+             KATEGORIEN
              ================================================= -->
 
         <section
@@ -208,19 +271,23 @@
 
             <div class="container">
 
+
                 <h2 class="section-title">
                     Entdeckt DarkSystems
                 </h2>
 
+
                 <p class="section-subtitle">
-                    Technologie für jeden Teil Eures digitalen Lebens.
+                    Technologie für jeden Teil Eures
+                    digitalen Lebens.
                 </p>
+
 
 
                 <div class="category-grid">
 
 
-                    <!-- Smartphones -->
+                    <!-- Smartphone -->
 
                     <a
                         href="#products"
@@ -242,7 +309,8 @@
                     </a>
 
 
-                    <!-- Laptops -->
+
+                    <!-- Laptop -->
 
                     <a
                         href="#products"
@@ -262,6 +330,7 @@
                         </p>
 
                     </a>
+
 
 
                     <!-- Audio -->
@@ -284,6 +353,7 @@
                         </p>
 
                     </a>
+
 
 
                     <!-- Smart Home -->
@@ -316,7 +386,7 @@
 
 
         <!-- =================================================
-             PRODUCTS
+             PRODUKTE
              ================================================= -->
 
         <section
@@ -326,24 +396,31 @@
 
             <div class="container">
 
+
                 <h2 class="section-title">
                     Highlights
                 </h2>
 
+
                 <p class="section-subtitle">
-                    Unsere neuesten Produkte – entwickelt mit
-                    kompromisslosem Fokus auf Design und Technologie.
+
+                    Unsere neuesten Produkte – entwickelt
+                    mit kompromisslosem Fokus auf Design
+                    und Technologie.
+
                 </p>
+
 
 
                 <div class="product-grid">
 
 
                     <!-- =====================================
-                         DARKPHONE
+                         DARKPHONE X1 PRO
                          ===================================== -->
 
                     <article class="product-card">
+
 
                         <div class="product-image">
 
@@ -355,27 +432,37 @@
                         </div>
 
 
+
                         <div class="product-info">
+
 
                             <span class="product-category">
                                 Smartphone
                             </span>
 
+
                             <h3 class="product-name">
                                 DarkPhone X1 Pro
                             </h3>
 
+
                             <p class="product-description">
+
                                 Maximale Performance.
-                                Präzise Kameras. Minimalistisches Design.
+                                Präzise Kameras.
+                                Minimalistisches Design.
+
                             </p>
+
 
 
                             <div class="product-bottom">
 
+
                                 <span class="product-price">
                                     999,00 €
                                 </span>
+
 
                                 <button
                                     class="product-button"
@@ -394,10 +481,11 @@
 
 
                     <!-- =====================================
-                         DARKBOOK
+                         DARKBOOK 14
                          ===================================== -->
 
                     <article class="product-card">
+
 
                         <div class="product-image">
 
@@ -409,27 +497,36 @@
                         </div>
 
 
+
                         <div class="product-info">
+
 
                             <span class="product-category">
                                 Laptop
                             </span>
 
+
                             <h3 class="product-name">
                                 DarkBook 14
                             </h3>
 
+
                             <p class="product-description">
+
                                 Dünn, leistungsstark und bereit
                                 für produktives Arbeiten.
+
                             </p>
+
 
 
                             <div class="product-bottom">
 
+
                                 <span class="product-price">
                                     1.099,00 €
                                 </span>
+
 
                                 <button
                                     class="product-button"
@@ -448,10 +545,11 @@
 
 
                     <!-- =====================================
-                         DARKBUDS
+                         DARKBUDS 3
                          ===================================== -->
 
                     <article class="product-card">
+
 
                         <div class="product-image">
 
@@ -463,27 +561,37 @@
                         </div>
 
 
+
                         <div class="product-info">
+
 
                             <span class="product-category">
                                 Audio
                             </span>
 
+
                             <h3 class="product-name">
                                 DarkBuds 3
                             </h3>
 
+
                             <p class="product-description">
+
                                 Klarer Klang, aktive
-                                Geräuschunterdrückung und Komfort.
+                                Geräuschunterdrückung
+                                und Komfort.
+
                             </p>
+
 
 
                             <div class="product-bottom">
 
+
                                 <span class="product-price">
                                     149,00 €
                                 </span>
+
 
                                 <button
                                     class="product-button"
@@ -508,7 +616,7 @@
 
 
         <!-- =================================================
-             OFFER
+             ANGEBOT
              ================================================= -->
 
         <section
@@ -518,21 +626,29 @@
 
             <div class="container">
 
+
                 <div class="offer-card">
 
+
                     <div class="offer-content">
+
 
                         <h2>
                             Technologie,
                             die zu Euch passt.
                         </h2>
 
+
                         <p>
-                            Entdeckt das DarkSystems Ökosystem
-                            und verbindet Eure Geräte miteinander.
+
+                            Entdeckt das DarkSystems
+                            Ökosystem und verbindet
+                            Eure Geräte miteinander.
+
                         </p>
 
                     </div>
+
 
 
                     <a
@@ -551,7 +667,7 @@
 
 
         <!-- =================================================
-             DEMO NOTICE
+             DEMO HINWEIS
              ================================================= -->
 
         <section
@@ -561,18 +677,26 @@
 
             <div class="container">
 
+
                 <div class="demo-notice">
+
 
                     <strong>
                         DarkSystems Store – Demo
                     </strong>
 
+
                     <br>
 
-                    Diese Website ist ein nicht-kommerzielles
+
+                    Diese Website ist ein
+                    nicht-kommerzielles
                     Demonstrationsprojekt.
-                    Es finden keine echten Bestellungen,
-                    Zahlungen oder Verkäufe statt.
+
+                    Es finden keine echten
+                    Bestellungen, Zahlungen
+                    oder Verkäufe statt.
+
 
                 </div>
 
@@ -596,23 +720,33 @@
             <div class="footer-grid">
 
 
-                <!-- Brand -->
+                <!-- DarkSystems -->
 
                 <div class="footer-brand">
+
 
                     <a
                         href="index.html"
                         class="logo"
                     >
-                        <span class="logo-mark">D</span>
-                        <span>DarkSystems</span>
+
+                        <span class="logo-mark">
+                            D
+                        </span>
+
+                        <span>
+                            DarkSystems
+                        </span>
+
                     </a>
 
 
                     <p>
+
                         Technology. Reimagined.
                         <br>
                         Das DarkSystems Ökosystem.
+
                     </p>
 
                 </div>
@@ -627,17 +761,21 @@
                         Produkte
                     </h4>
 
+
                     <a href="#products">
                         Smartphones
                     </a>
+
 
                     <a href="#products">
                         Laptops
                     </a>
 
+
                     <a href="#products">
                         Audio
                     </a>
+
 
                     <a href="#products">
                         Smart Home
@@ -655,17 +793,21 @@
                         Service
                     </h4>
 
+
                     <a href="#">
                         Hilfe
                     </a>
+
 
                     <a href="#">
                         Kontakt
                     </a>
 
+
                     <a href="#">
                         Versand
                     </a>
+
 
                     <a href="#">
                         Rückgabe
@@ -683,13 +825,16 @@
                         DarkSystems
                     </h4>
 
+
                     <a href="#about">
                         Über uns
                     </a>
 
+
                     <a href="#">
                         Datenschutz
                     </a>
+
 
                     <a href="#">
                         Impressum
@@ -709,6 +854,7 @@
                     © 2026 DarkSystems
                 </span>
 
+
                 <span>
                     Nicht-kommerzielles Demo-Projekt
                 </span>
@@ -726,6 +872,7 @@
          ===================================================== -->
 
     <script src="js/main.js"></script>
+
 
 </body>
 </html>
