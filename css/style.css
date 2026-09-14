@@ -1698,3 +1698,14 @@ section {
     }
 
 }
+
+
+/* =========================================================
+   Warenkorb – weniger transparent
+   ========================================================= */
+
+.cart-panel {
+    background: rgba(15, 15, 18, 0.98);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
