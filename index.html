@@ -10,147 +10,60 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <meta
-        name="description"
-        content="DarkSystems Store – Technologie. Neu gedacht."
-    >
-
     <title>DarkSystems Store</title>
 
-
-    <!--
-        Der Browser soll beim Reload keine
-        vorherige Scrollposition wiederherstellen.
-    -->
-    <script>
-        if ("scrollRestoration" in history) {
-            history.scrollRestoration = "manual";
-        }
-    </script>
-
-
-    <!-- Favicon -->
-    <link
-        rel="icon"
-        href="images/favicon.png"
-    >
-
-
-    <!-- Main CSS -->
     <link
         rel="stylesheet"
         href="css/style.css"
     >
 
+    <link
+        rel="icon"
+        type="image/png"
+        href="images/favicon.png"
+    >
+
+
+    <!--
+        Browser soll beim Neuladen nicht
+        die alte Scrollposition wiederherstellen.
+    -->
+    <script>
+
+        if ("scrollRestoration" in history) {
+            history.scrollRestoration = "manual";
+        }
+
+    </script>
+
 </head>
-<!-- =========================================================
-     Warenkorb
-     ========================================================= -->
-
-<div class="cart-overlay" id="cartOverlay"></div>
-
-<aside class="cart-panel" id="cartPanel">
-
-    <div class="cart-header">
-        <div>
-            <h2>Warenkorb</h2>
-            <span id="cartItemCount">0 Produkte</span>
-        </div>
-
-        <button
-            class="cart-close"
-            id="cartClose"
-            aria-label="Warenkorb schließen"
-        >
-            ×
-        </button>
-    </div>
 
 
-    <div class="cart-content" id="cartContent">
-
-        <div class="cart-empty" id="cartEmpty">
-
-            <div class="cart-empty-icon">
-                🛒
-            </div>
-
-            <h3>Dein Warenkorb ist leer</h3>
-
-            <p>
-                Füge Produkte hinzu, um sie hier zu sehen.
-            </p>
-
-        </div>
-
-
-        <div
-            class="cart-items"
-            id="cartItems"
-        ></div>
-
-    </div>
-
-
-    <div class="cart-footer">
-
-        <div class="cart-total">
-            <span>Gesamtsumme</span>
-            <strong id="cartTotal">0,00 €</strong>
-        </div>
-
-        <button
-            class="cart-checkout"
-            id="cartCheckout"
-        >
-            Zur Kasse
-        </button>
-
-        <p class="cart-demo">
-            Demo-Shop – es findet keine echte Bestellung statt.
-        </p>
-
-    </div>
-
-</aside>
 <body>
 
 
     <!-- =====================================================
-         HEADER
+         Header
          ===================================================== -->
 
     <header class="site-header">
 
-        <div class="container header-inner">
+        <div class="header-inner">
 
 
             <!-- Logo -->
 
             <a
-                href="index.html"
+                href="#"
                 class="logo"
-                aria-label="DarkSystems Startseite"
             >
-
-                <span class="logo-mark">
-                    D
-                </span>
-
-                <span>
-                    DarkSystems
-                </span>
-
+                DarkSystems
             </a>
-
 
 
             <!-- Navigation -->
 
-            <nav
-                class="main-nav"
-                aria-label="Hauptnavigation"
-            >
+            <nav class="main-nav">
 
                 <a href="#products">
                     Produkte
@@ -164,15 +77,10 @@
                     Angebote
                 </a>
 
-                <a href="#about">
-                    Über DarkSystems
-                </a>
-
             </nav>
 
 
-
-            <!-- Header Actions -->
+            <!-- Header Aktionen -->
 
             <div class="header-actions">
 
@@ -181,36 +89,31 @@
 
                 <button
                     class="icon-button"
-                    type="button"
                     aria-label="Suche"
-                    title="Suche"
+                    type="button"
                 >
                     🔍
                 </button>
 
 
-
-                <!-- Dark / Light Mode -->
+                <!-- Theme -->
 
                 <button
                     class="icon-button"
                     id="themeToggle"
-                    type="button"
                     aria-label="Dark Mode"
-                    title="Dark / Light Mode"
+                    type="button"
                 >
                     🌙
                 </button>
 
 
-
                 <!-- Warenkorb -->
 
                 <button
-                    class="icon-button cart-button"
+                    class="cart-button"
+                    aria-label="Warenkorb öffnen"
                     type="button"
-                    aria-label="Warenkorb"
-                    title="Warenkorb"
                 >
 
                     🛒
@@ -225,14 +128,12 @@
                 </button>
 
 
-
                 <!-- Mobile Menü -->
 
                 <button
-                    class="icon-button mobile-menu-button"
-                    type="button"
+                    class="menu-button"
                     aria-label="Menü öffnen"
-                    title="Menü"
+                    type="button"
                 >
                     ☰
                 </button>
@@ -246,80 +147,59 @@
 
 
     <!-- =====================================================
-         MAIN
+         Hero
          ===================================================== -->
 
     <main>
 
 
-        <!-- =================================================
-             HERO
-             ================================================= -->
-
         <section class="hero">
 
-            <div class="container hero-inner">
+            <div class="hero-content">
+
+                <span class="hero-eyebrow">
+                    DarkSystems
+                </span>
+
+                <h1>
+                    Technology.<br>
+                    Reimagined.
+                </h1>
+
+                <p>
+                    Leistungsstarke Technologie.
+                    Modernes Design.
+                    Entwickelt für euren Alltag.
+                </p>
 
 
-                <!-- Hero Text -->
+                <div class="hero-actions">
 
-                <div class="hero-content">
-
-                    <div class="hero-eyebrow">
-                        DarkSystems
-                    </div>
-
-
-                    <h1>
-                        Technology.<br>
-                        <span>
-                            Reimagined.
-                        </span>
-                    </h1>
-
-
-                    <p class="hero-description">
-
-                        Entdeckt eine neue Generation smarter
-                        Technologie. Leistungsstark, elegant
-                        und entwickelt für den Alltag.
-
-                    </p>
-
-
-                    <div class="hero-actions">
-
-                        <a
-                            href="#products"
-                            class="button button-primary"
-                        >
-                            Produkte entdecken
-                        </a>
-
-
-                        <a
-                            href="#categories"
-                            class="button button-secondary"
-                        >
-                            Mehr erfahren
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- Hero Produkt -->
-
-                <div class="hero-product">
-
-                    <img
-                        src="images/darkphone-x1-pro.png"
-                        alt="DarkPhone X1 Pro"
+                    <a
+                        href="#products"
+                        class="primary-button"
                     >
+                        Produkte entdecken
+                    </a>
+
+                    <a
+                        href="#categories"
+                        class="secondary-button"
+                    >
+                        Mehr erfahren
+                    </a>
 
                 </div>
+
+            </div>
+
+
+            <div class="hero-product">
+
+                <img
+                    src="images/darkphone-x1-pro.png"
+                    alt="DarkPhone X1 Pro"
+                >
 
             </div>
 
@@ -328,125 +208,111 @@
 
 
         <!-- =================================================
-             KATEGORIEN
+             Kategorien
              ================================================= -->
 
         <section
-            class="categories"
+            class="categories-section"
             id="categories"
         >
 
-            <div class="container">
+            <div class="section-heading">
 
+                <span>
+                    Entdecke DarkSystems
+                </span>
 
-                <h2 class="section-title">
-                    Entdeckt DarkSystems
+                <h2>
+                    Technologie für jeden Bereich.
                 </h2>
 
-
-                <p class="section-subtitle">
-
-                    Technologie für jeden Teil Eures
-                    digitalen Lebens.
-
-                </p>
+            </div>
 
 
-
-                <div class="category-grid">
-
-
-                    <!-- Smartphone -->
-
-                    <a
-                        href="#products"
-                        class="category-card"
-                    >
-
-                        <div class="category-icon">
-                            📱
-                        </div>
-
-                        <h3>
-                            Smartphones
-                        </h3>
-
-                        <p>
-                            Leistung für unterwegs
-                        </p>
-
-                    </a>
+            <div class="categories-grid">
 
 
+                <a
+                    href="#products"
+                    class="category-card"
+                >
 
-                    <!-- Laptop -->
+                    <span class="category-icon">
+                        📱
+                    </span>
 
-                    <a
-                        href="#products"
-                        class="category-card"
-                    >
+                    <h3>
+                        Smartphones
+                    </h3>
 
-                        <div class="category-icon">
-                            💻
-                        </div>
+                    <p>
+                        Mobile Technologie
+                        ohne Kompromisse.
+                    </p>
 
-                        <h3>
-                            Laptops
-                        </h3>
-
-                        <p>
-                            Produktivität ohne Grenzen
-                        </p>
-
-                    </a>
+                </a>
 
 
+                <a
+                    href="#products"
+                    class="category-card"
+                >
 
-                    <!-- Audio -->
+                    <span class="category-icon">
+                        💻
+                    </span>
 
-                    <a
-                        href="#products"
-                        class="category-card"
-                    >
+                    <h3>
+                        Laptops
+                    </h3>
 
-                        <div class="category-icon">
-                            🎧
-                        </div>
+                    <p>
+                        Leistung für Arbeit,
+                        Schule und Kreativität.
+                    </p>
 
-                        <h3>
-                            Audio
-                        </h3>
-
-                        <p>
-                            Sound neu erleben
-                        </p>
-
-                    </a>
+                </a>
 
 
+                <a
+                    href="#products"
+                    class="category-card"
+                >
 
-                    <!-- Smart Home -->
+                    <span class="category-icon">
+                        🎧
+                    </span>
 
-                    <a
-                        href="#products"
-                        class="category-card"
-                    >
+                    <h3>
+                        Audio
+                    </h3>
 
-                        <div class="category-icon">
-                            🏠
-                        </div>
+                    <p>
+                        Sound, der euch begleitet.
+                    </p>
 
-                        <h3>
-                            Smart Home
-                        </h3>
+                </a>
 
-                        <p>
-                            Smarter leben
-                        </p>
 
-                    </a>
+                <a
+                    href="#products"
+                    class="category-card"
+                >
 
-                </div>
+                    <span class="category-icon">
+                        🏠
+                    </span>
+
+                    <h3>
+                        Smart Home
+                    </h3>
+
+                    <p>
+                        Euer Zuhause,
+                        smarter gedacht.
+                    </p>
+
+                </a>
 
             </div>
 
@@ -455,279 +321,189 @@
 
 
         <!-- =================================================
-             PRODUKTE
+             Produkte
              ================================================= -->
 
         <section
-            class="products"
+            class="products-section"
             id="products"
         >
 
-            <div class="container">
+            <div class="section-heading">
 
-
-                <h2 class="section-title">
+                <span>
                     Highlights
+                </span>
+
+                <h2>
+                    Unsere beliebtesten Produkte.
                 </h2>
-
-
-                <p class="section-subtitle">
-
-                    Unsere neuesten Produkte – entwickelt
-                    mit kompromisslosem Fokus auf Design
-                    und Technologie.
-
-                </p>
-
-
-
-                <div class="product-grid">
-
-
-                    <!-- =====================================
-                         DARKPHONE X1 PRO
-                         ===================================== -->
-
-                    <article class="product-card">
-
-
-                        <div class="product-image">
-
-                            <img
-                                src="images/darkphone-x1-pro.png"
-                                alt="DarkPhone X1 Pro"
-                            >
-
-                        </div>
-
-
-
-                        <div class="product-info">
-
-
-                            <span class="product-category">
-                                Smartphone
-                            </span>
-
-
-                            <h3 class="product-name">
-                                DarkPhone X1 Pro
-                            </h3>
-
-
-                            <p class="product-description">
-
-                                Maximale Performance.
-                                Präzise Kameras.
-                                Minimalistisches Design.
-
-                            </p>
-
-
-
-                            <div class="product-bottom">
-
-
-                                <span class="product-price">
-                                    999,00 €
-                                </span>
-
-
-                                <button
-                                    class="product-button"
-                                    type="button"
-                                    data-product="DarkPhone X1 Pro"
-                                >
-                                    In den Warenkorb
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- =====================================
-                         DARKBOOK 14
-                         ===================================== -->
-
-                    <article class="product-card">
-
-
-                        <div class="product-image">
-
-                            <img
-                                src="images/darkbook-14.png"
-                                alt="DarkBook 14"
-                            >
-
-                        </div>
-
-
-
-                        <div class="product-info">
-
-
-                            <span class="product-category">
-                                Laptop
-                            </span>
-
-
-                            <h3 class="product-name">
-                                DarkBook 14
-                            </h3>
-
-
-                            <p class="product-description">
-
-                                Dünn, leistungsstark und bereit
-                                für produktives Arbeiten.
-
-                            </p>
-
-
-
-                            <div class="product-bottom">
-
-
-                                <span class="product-price">
-                                    1.099,00 €
-                                </span>
-
-
-                                <button
-                                    class="product-button"
-                                    type="button"
-                                    data-product="DarkBook 14"
-                                >
-                                    In den Warenkorb
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- =====================================
-                         DARKBUDS 3
-                         ===================================== -->
-
-                    <article class="product-card">
-
-
-                        <div class="product-image">
-
-                            <img
-                                src="images/darkbuds-3.png"
-                                alt="DarkBuds 3"
-                            >
-
-                        </div>
-
-
-
-                        <div class="product-info">
-
-
-                            <span class="product-category">
-                                Audio
-                            </span>
-
-
-                            <h3 class="product-name">
-                                DarkBuds 3
-                            </h3>
-
-
-                            <p class="product-description">
-
-                                Klarer Klang, aktive
-                                Geräuschunterdrückung
-                                und Komfort.
-
-                            </p>
-
-
-
-                            <div class="product-bottom">
-
-
-                                <span class="product-price">
-                                    149,00 €
-                                </span>
-
-
-                                <button
-                                    class="product-button"
-                                    type="button"
-                                    data-product="DarkBuds 3"
-                                >
-                                    In den Warenkorb
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                </div>
 
             </div>
 
-        </section>
+
+            <div class="product-grid">
 
 
+                <!-- =========================================
+                     DarkPhone X1 Pro
+                     ========================================= -->
 
-        <!-- =================================================
-             ANGEBOT
-             ================================================= -->
+                <article class="product-card">
 
-        <section
-            class="offer"
-            id="offers"
-        >
+                    <div class="product-image">
 
-            <div class="container">
-
-
-                <div class="offer-card">
-
-
-                    <div class="offer-content">
-
-
-                        <h2>
-                            Technologie,
-                            die zu Euch passt.
-                        </h2>
-
-
-                        <p>
-
-                            Entdeckt das DarkSystems
-                            Ökosystem und verbindet
-                            Eure Geräte miteinander.
-
-                        </p>
+                        <img
+                            src="images/darkphone-x1-pro.png"
+                            alt="DarkPhone X1 Pro"
+                        >
 
                     </div>
 
 
+                    <div class="product-info">
 
-                    <a
-                        href="#products"
-                        class="button button-primary"
-                    >
-                        Jetzt entdecken
-                    </a>
+                        <span class="product-category">
+                            Smartphone
+                        </span>
 
-                </div>
+                        <h3>
+                            DarkPhone X1 Pro
+                        </h3>
+
+                        <p>
+                            Maximale Performance
+                            in einem minimalistischen Design.
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                999,00 €
+                            </strong>
+
+                            <button
+                                class="product-button"
+                                type="button"
+                                data-product="darkphone-x1-pro"
+                            >
+                                In den Warenkorb
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================================
+                     DarkBook 14
+                     ========================================= -->
+
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/darkbook-14.png"
+                            alt="DarkBook 14"
+                        >
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Laptop
+                        </span>
+
+                        <h3>
+                            DarkBook 14
+                        </h3>
+
+                        <p>
+                            Kompakt, leistungsstark
+                            und bereit für euren Alltag.
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                1.099,00 €
+                            </strong>
+
+                            <button
+                                class="product-button"
+                                type="button"
+                                data-product="darkbook-14"
+                            >
+                                In den Warenkorb
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================================
+                     DarkBuds 3
+                     ========================================= -->
+
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/darkbuds-3.png"
+                            alt="DarkBuds 3"
+                        >
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Audio
+                        </span>
+
+                        <h3>
+                            DarkBuds 3
+                        </h3>
+
+                        <p>
+                            Klarer Sound,
+                            kompakt und kabellos.
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                149,00 €
+                            </strong>
+
+                            <button
+                                class="product-button"
+                                type="button"
+                                data-product="darkbuds-3"
+                            >
+                                In den Warenkorb
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
 
             </div>
 
@@ -736,38 +512,61 @@
 
 
         <!-- =================================================
-             DEMO HINWEIS
+             Angebot
              ================================================= -->
 
         <section
-            class="demo-section"
-            id="about"
+            class="offer-section"
+            id="offers"
         >
 
-            <div class="container">
+            <div class="offer-content">
+
+                <span>
+                    DarkSystems Deals
+                </span>
+
+                <h2>
+                    Technologie.
+                    Jetzt entdecken.
+                </h2>
+
+                <p>
+                    Entdeckt ausgewählte Produkte
+                    und aktuelle Angebote.
+                </p>
+
+                <a
+                    href="#products"
+                    class="primary-button"
+                >
+                    Angebote ansehen
+                </a>
+
+            </div>
+
+        </section>
 
 
-                <div class="demo-notice">
 
+        <!-- =================================================
+             Demo Hinweis
+             ================================================= -->
 
-                    <strong>
-                        DarkSystems Store – Demo
-                    </strong>
+        <section class="demo-notice">
 
+            <div>
 
-                    <br>
+                <strong>
+                    ⚠️ Demo-Shop
+                </strong>
 
-
-                    Diese Website ist ein
-                    nicht-kommerzielles
-                    Demonstrationsprojekt.
-
-                    Es finden keine echten
-                    Bestellungen, Zahlungen
-                    oder Verkäufe statt.
-
-
-                </div>
+                <p>
+                    DarkSystems Store ist eine
+                    nicht-kommerzielle Demo-Webseite.
+                    Es werden keine echten Bestellungen
+                    oder Zahlungen durchgeführt.
+                </p>
 
             </div>
 
@@ -778,157 +577,51 @@
 
 
     <!-- =====================================================
-         FOOTER
+         Footer
          ===================================================== -->
 
     <footer class="site-footer">
 
-        <div class="container">
+        <div class="footer-inner">
 
 
-            <div class="footer-grid">
+            <div class="footer-brand">
 
+                <strong>
+                    DarkSystems
+                </strong>
 
-                <!-- DarkSystems -->
-
-                <div class="footer-brand">
-
-
-                    <a
-                        href="index.html"
-                        class="logo"
-                    >
-
-                        <span class="logo-mark">
-                            D
-                        </span>
-
-                        <span>
-                            DarkSystems
-                        </span>
-
-                    </a>
-
-
-                    <p>
-
-                        Technology. Reimagined.
-                        <br>
-                        Das DarkSystems Ökosystem.
-
-                    </p>
-
-                </div>
-
-
-
-                <!-- Produkte -->
-
-                <div class="footer-column">
-
-                    <h4>
-                        Produkte
-                    </h4>
-
-
-                    <a href="#products">
-                        Smartphones
-                    </a>
-
-
-                    <a href="#products">
-                        Laptops
-                    </a>
-
-
-                    <a href="#products">
-                        Audio
-                    </a>
-
-
-                    <a href="#products">
-                        Smart Home
-                    </a>
-
-                </div>
-
-
-
-                <!-- Service -->
-
-                <div class="footer-column">
-
-                    <h4>
-                        Service
-                    </h4>
-
-
-                    <a href="#">
-                        Hilfe
-                    </a>
-
-
-                    <a href="#">
-                        Kontakt
-                    </a>
-
-
-                    <a href="#">
-                        Versand
-                    </a>
-
-
-                    <a href="#">
-                        Rückgabe
-                    </a>
-
-                </div>
-
-
-
-                <!-- DarkSystems -->
-
-                <div class="footer-column">
-
-                    <h4>
-                        DarkSystems
-                    </h4>
-
-
-                    <a href="#about">
-                        Über uns
-                    </a>
-
-
-                    <a href="#">
-                        Datenschutz
-                    </a>
-
-
-                    <a href="#">
-                        Impressum
-                    </a>
-
-                </div>
+                <p>
+                    Technology. Reimagined.
+                </p>
 
             </div>
 
 
+            <div class="footer-links">
 
-            <!-- Footer Bottom -->
+                <a href="#">
+                    Datenschutz
+                </a>
 
-            <div class="footer-bottom">
+                <a href="#">
+                    Impressum
+                </a>
 
-                <span>
-                    © 2026 DarkSystems
-                </span>
-
-
-                <span>
-                    Nicht-kommerzielles Demo-Projekt
-                </span>
+                <a href="#">
+                    Kontakt
+                </a>
 
             </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            © 2026 DarkSystems.
+            Demo-Projekt.
 
         </div>
 
@@ -937,10 +630,147 @@
 
 
     <!-- =====================================================
-         JAVASCRIPT
+         Warenkorb
+         ===================================================== -->
+
+    <div
+        class="cart-overlay"
+        id="cartOverlay"
+    ></div>
+
+
+    <aside
+        class="cart-panel"
+        id="cartPanel"
+        aria-label="Warenkorb"
+    >
+
+
+        <!-- Warenkorb Header -->
+
+        <div class="cart-header">
+
+            <div>
+
+                <h2>
+                    Warenkorb
+                </h2>
+
+                <span id="cartItemCount">
+                    0 Produkte
+                </span>
+
+            </div>
+
+
+            <button
+                class="cart-close"
+                id="cartClose"
+                aria-label="Warenkorb schließen"
+                type="button"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+
+        <!-- Warenkorb Inhalt -->
+
+        <div class="cart-content">
+
+
+            <!-- Leer -->
+
+            <div
+                class="cart-empty"
+                id="cartEmpty"
+            >
+
+                <div class="cart-empty-icon">
+                    🛒
+                </div>
+
+                <h3>
+                    Dein Warenkorb ist leer
+                </h3>
+
+                <p>
+                    Füge Produkte hinzu,
+                    um sie hier zu sehen.
+                </p>
+
+            </div>
+
+
+            <!-- Produkte -->
+
+            <div
+                class="cart-items"
+                id="cartItems"
+            ></div>
+
+        </div>
+
+
+
+        <!-- Warenkorb Footer -->
+
+        <div class="cart-footer">
+
+
+            <div class="cart-total">
+
+                <span>
+                    Gesamtsumme
+                </span>
+
+                <strong id="cartTotal">
+                    0,00 €
+                </strong>
+
+            </div>
+
+
+            <button
+                class="cart-checkout"
+                id="cartCheckout"
+                type="button"
+            >
+                Zur Kasse
+            </button>
+
+
+            <p class="cart-demo">
+                Demo-Shop – es findet keine echte
+                Bestellung statt.
+            </p>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         JavaScript
          ===================================================== -->
 
     <script src="js/main.js"></script>
+
+
+    <!-- Scroll beim Laden ganz nach oben -->
+
+    <script>
+
+        window.addEventListener("load", function () {
+
+            window.scrollTo(0, 0);
+
+        });
+
+    </script>
 
 
 </body>
