@@ -43,8 +43,76 @@
     >
 
 </head>
+<!-- =========================================================
+     Warenkorb
+     ========================================================= -->
+
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<aside class="cart-panel" id="cartPanel">
+
+    <div class="cart-header">
+        <div>
+            <h2>Warenkorb</h2>
+            <span id="cartItemCount">0 Produkte</span>
+        </div>
+
+        <button
+            class="cart-close"
+            id="cartClose"
+            aria-label="Warenkorb schließen"
+        >
+            ×
+        </button>
+    </div>
 
 
+    <div class="cart-content" id="cartContent">
+
+        <div class="cart-empty" id="cartEmpty">
+
+            <div class="cart-empty-icon">
+                🛒
+            </div>
+
+            <h3>Dein Warenkorb ist leer</h3>
+
+            <p>
+                Füge Produkte hinzu, um sie hier zu sehen.
+            </p>
+
+        </div>
+
+
+        <div
+            class="cart-items"
+            id="cartItems"
+        ></div>
+
+    </div>
+
+
+    <div class="cart-footer">
+
+        <div class="cart-total">
+            <span>Gesamtsumme</span>
+            <strong id="cartTotal">0,00 €</strong>
+        </div>
+
+        <button
+            class="cart-checkout"
+            id="cartCheckout"
+        >
+            Zur Kasse
+        </button>
+
+        <p class="cart-demo">
+            Demo-Shop – es findet keine echte Bestellung statt.
+        </p>
+
+    </div>
+
+</aside>
 <body>
 
 
