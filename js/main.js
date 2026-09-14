@@ -1,127 +1,112 @@
 /* =========================================================
-   DarkSystems Store
-   Main JavaScript
+   DarkSystems Store - Main JavaScript
    ========================================================= */
-
-
-/* ---------------------------------------------------------
-   1. Theme
-   --------------------------------------------------------- */
 
 const themeToggle = document.getElementById("themeToggle");
 
+
+/* ---------------------------------------------------------
+   Theme laden
+   --------------------------------------------------------- */
+
 const savedTheme = localStorage.getItem("darkSystemsTheme");
 
-if (savedTheme) {
-    document.documentElement.setAttribute("data-theme", savedTheme);
-} else {
-    const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-    ).matches;
-
+if (savedTheme === "dark" || savedTheme === "light") {
     document.documentElement.setAttribute(
         "data-theme",
-        prefersDark ? "dark" : "light"
+        savedTheme
+    );
+} else {
+    document.documentElement.setAttribute(
+        "data-theme",
+        "light"
     );
 }
 
 
-/* Theme icon aktualisieren */
+/* ---------------------------------------------------------
+   Theme-Symbol
+   --------------------------------------------------------- */
 
 function updateThemeIcon() {
 
     const currentTheme =
         document.documentElement.getAttribute("data-theme");
 
-    if (!themeToggle) {
-        return;
+    if (currentTheme === "dark") {
+        themeToggle.textContent = "☀️";
+        themeToggle.setAttribute(
+            "aria-label",
+            "Light Mode"
+        );
+    } else {
+        themeToggle.textContent = "🌙";
+        themeToggle.setAttribute(
+            "aria-label",
+            "Dark Mode"
+        );
     }
-
-    themeToggle.textContent =
-        currentTheme === "dark"
-            ? "☀️"
-            : "🌙";
-}
-
-
-/* Theme wechseln */
-
-if (themeToggle) {
-
-    themeToggle.addEventListener("click", () => {
-
-        const currentTheme =
-            document.documentElement.getAttribute("data-theme");
-
-        const newTheme =
-            currentTheme === "dark"
-                ? "light"
-                : "dark";
-
-        document.documentElement.setAttribute(
-            "data-theme",
-            newTheme
-        );
-
-        localStorage.setItem(
-            "darkSystemsTheme",
-            newTheme
-        );
-
-        updateThemeIcon();
-    });
 }
 
 updateThemeIcon();
 
 
+/* ---------------------------------------------------------
+   Theme umschalten
+   --------------------------------------------------------- */
+
+themeToggle.addEventListener("click", function () {
+
+    const currentTheme =
+        document.documentElement.getAttribute("data-theme");
+
+    const newTheme =
+        currentTheme === "dark"
+            ? "light"
+            : "dark";
+
+    document.documentElement.setAttribute(
+        "data-theme",
+        newTheme
+    );
+
+    localStorage.setItem(
+        "darkSystemsTheme",
+        newTheme
+    );
+
+    updateThemeIcon();
+
+});
+
 
 /* ---------------------------------------------------------
-   2. Cart
+   Warenkorb
    --------------------------------------------------------- */
 
 const cartCountElement =
     document.getElementById("cartCount");
 
-
 let cartCount =
     parseInt(
-        localStorage.getItem("darkSystemsCartCount"),
-        10
+        localStorage.getItem("darkSystemsCartCount")
     ) || 0;
 
 
-function updateCartCount() {
-
-    if (!cartCountElement) {
-        return;
-    }
-
+function updateCart() {
     cartCountElement.textContent = cartCount;
 }
 
-updateCartCount();
+updateCart();
 
-
-
-/* ---------------------------------------------------------
-   3. Add to Cart
-   --------------------------------------------------------- */
 
 const productButtons =
-    document.querySelectorAll(
-        ".product-button"
-    );
+    document.querySelectorAll(".product-button");
 
 
-productButtons.forEach((button) => {
+productButtons.forEach(function (button) {
 
-    button.addEventListener("click", () => {
-
-        const product =
-            button.dataset.product ||
-            "Produkt";
-
+    button.addEventListener("click", function () {
 
         cartCount++;
 
@@ -130,237 +115,37 @@ productButtons.forEach((button) => {
             cartCount
         );
 
-        updateCartCount();
+        updateCart();
 
-
-        /* Button Feedback */
-
-        const originalText =
+        const oldText =
             button.textContent;
 
         button.textContent =
             "✓ Hinzugefügt";
 
-
-        button.disabled = true;
-
-
-        setTimeout(() => {
-
-            button.textContent =
-                originalText;
-
-            button.disabled = false;
-
+        setTimeout(function () {
+            button.textContent = oldText;
         }, 1200);
 
-
-        console.log(
-            `${product} wurde zum Warenkorb hinzugefügt.`
-        );
     });
 
 });
 
 
-
 /* ---------------------------------------------------------
-   4. Cart Button
+   Warenkorb öffnen
    --------------------------------------------------------- */
 
 const cartButton =
-    document.querySelector(
-        ".cart-button"
+    document.querySelector(".cart-button");
+
+cartButton.addEventListener("click", function () {
+
+    alert(
+        "Warenkorb: " +
+        cartCount +
+        " Produkt" +
+        (cartCount === 1 ? "" : "e")
     );
 
-
-if (cartButton) {
-
-    cartButton.addEventListener("click", () => {
-
-        alert(
-            `Euer Warenkorb enthält aktuell ${cartCount} Produkt${cartCount === 1 ? "" : "e"}.`
-        );
-
-    });
-
-}
-
-
-
-/* ---------------------------------------------------------
-   5. Search
-   --------------------------------------------------------- */
-
-const searchButton =
-    document.querySelector(
-        '[aria-label="Suche"]'
-    );
-
-
-if (searchButton) {
-
-    searchButton.addEventListener("click", () => {
-
-        const searchTerm =
-            prompt(
-                "Wonach möchtet Ihr suchen?"
-            );
-
-
-        if (!searchTerm) {
-            return;
-        }
-
-
-        const products =
-            document.querySelectorAll(
-                ".product-card"
-            );
-
-
-        const normalizedSearch =
-            searchTerm
-                .trim()
-                .toLowerCase();
-
-
-        let found = false;
-
-
-        products.forEach((product) => {
-
-            const productName =
-                product
-                    .querySelector(".product-name")
-                    ?.textContent
-                    .toLowerCase() || "";
-
-
-            if (
-                productName.includes(
-                    normalizedSearch
-                )
-            ) {
-
-                product.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center"
-                });
-
-                product.style.outline =
-                    "3px solid var(--accent)";
-
-                product.style.outlineOffset =
-                    "5px";
-
-
-                setTimeout(() => {
-
-                    product.style.outline =
-                        "";
-
-                    product.style.outlineOffset =
-                        "";
-
-                }, 2000);
-
-
-                found = true;
-            }
-
-        });
-
-
-        if (!found) {
-
-            alert(
-                `Kein Produkt für „${searchTerm}“ gefunden.`
-            );
-
-        }
-
-    });
-
-}
-
-
-
-/* ---------------------------------------------------------
-   6. Mobile Menu
-   --------------------------------------------------------- */
-
-const mobileMenuButton =
-    document.querySelector(
-        ".mobile-menu-button"
-    );
-
-
-const mainNav =
-    document.querySelector(
-        ".main-nav"
-    );
-
-
-if (
-    mobileMenuButton &&
-    mainNav
-) {
-
-    mobileMenuButton.addEventListener(
-        "click",
-        () => {
-
-            const isOpen =
-                mainNav.classList.toggle(
-                    "mobile-nav-open"
-                );
-
-
-            mobileMenuButton.textContent =
-                isOpen
-                    ? "✕"
-                    : "☰";
-
-        }
-    );
-
-
-    /* Menü nach Klick auf Link schließen */
-
-    mainNav
-        .querySelectorAll("a")
-        .forEach((link) => {
-
-            link.addEventListener(
-                "click",
-                () => {
-
-                    mainNav.classList.remove(
-                        "mobile-nav-open"
-                    );
-
-                    mobileMenuButton.textContent =
-                        "☰";
-
-                }
-            );
-
-        });
-
-}
-
-
-
-/* ---------------------------------------------------------
-   7. Console
-   --------------------------------------------------------- */
-
-console.log(
-    "%cDarkSystems Store",
-    "font-size: 20px; font-weight: bold;"
-);
-
-console.log(
-    "Demo-Shop erfolgreich geladen."
-);
+});
