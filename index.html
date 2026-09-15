@@ -18,20 +18,59 @@
     <title>DarkSystems Store</title>
 
 
-    <!--
-        Der Browser soll beim Reload keine
-        vorherige Scrollposition wiederherstellen.
-    -->
+    <!-- =================================================
+         THEME VOR DEM ERSTEN RENDER SETZEN
+         ================================================= -->
+
+    <script>
+
+        (function () {
+
+            const savedTheme =
+                localStorage.getItem("darkSystemsTheme");
+
+            if (
+                savedTheme === "dark" ||
+                savedTheme === "light"
+            ) {
+
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    savedTheme
+                );
+
+            } else {
+
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    "light"
+                );
+
+            }
+
+        })();
+
+    </script>
+
+
+    <!-- =================================================
+         SCROLLPOSITION
+         ================================================= -->
+
     <script>
 
         if ("scrollRestoration" in history) {
+
             history.scrollRestoration = "manual";
+
         }
 
     </script>
 
 
-    <!-- Favicon -->
+    <!-- =================================================
+         FAVICON
+         ================================================= -->
 
     <link
         rel="icon"
@@ -39,7 +78,9 @@
     >
 
 
-    <!-- Main CSS -->
+    <!-- =================================================
+         MAIN CSS
+         ================================================= -->
 
     <link
         rel="stylesheet"
@@ -80,7 +121,6 @@
             </a>
 
 
-
             <!-- Navigation -->
 
             <nav
@@ -107,7 +147,6 @@
             </nav>
 
 
-
             <!-- Header Actions -->
 
             <div class="header-actions">
@@ -125,7 +164,6 @@
                 </button>
 
 
-
                 <!-- Dark / Light Mode -->
 
                 <button
@@ -137,7 +175,6 @@
                 >
                     🌙
                 </button>
-
 
 
                 <!-- Warenkorb -->
@@ -159,7 +196,6 @@
                     </span>
 
                 </button>
-
 
 
                 <!-- Mobile Menü -->
@@ -207,10 +243,13 @@
 
 
                     <h1>
+
                         Technology.<br>
+
                         <span>
                             Reimagined.
                         </span>
+
                     </h1>
 
 
@@ -224,6 +263,7 @@
 
 
                     <div class="hero-actions">
+
 
                         <a
                             href="#products"
@@ -288,13 +328,15 @@
                 </p>
 
 
-
                 <div class="category-grid">
 
 
                     <!-- Smartphone -->
 
-                    <a href="category.html?category=smartphones" class="category-card">
+                    <a
+                        href="category.html?category=smartphones"
+                        class="category-card"
+                    >
 
                         <div class="category-icon">
                             📱
@@ -314,7 +356,10 @@
 
                     <!-- Laptop -->
 
-                    <a href="category.html?category=laptops" class="category-card">
+                    <a
+                        href="category.html?category=laptops"
+                        class="category-card"
+                    >
 
                         <div class="category-icon">
                             💻
@@ -334,8 +379,11 @@
 
                     <!-- Audio -->
 
-                    <a href="category.html?category=audio" class="category-card">
-                        
+                    <a
+                        href="category.html?category=audio"
+                        class="category-card"
+                    >
+
                         <div class="category-icon">
                             🎧
                         </div>
@@ -354,7 +402,10 @@
 
                     <!-- Smart Home -->
 
-                    <a href="category.html?category=smart-home" class="category-card">
+                    <a
+                        href="category.html?category=smart-home"
+                        class="category-card"
+                    >
 
                         <div class="category-icon">
                             🏠
@@ -404,7 +455,6 @@
                 </p>
 
 
-
                 <div class="product-grid">
 
 
@@ -423,7 +473,6 @@
                             >
 
                         </div>
-
 
 
                         <div class="product-info">
@@ -448,7 +497,6 @@
                             </p>
 
 
-
                             <div class="product-bottom">
 
 
@@ -464,6 +512,7 @@
                                 >
                                     In den Warenkorb
                                 </button>
+
 
                             </div>
 
@@ -490,7 +539,6 @@
                         </div>
 
 
-
                         <div class="product-info">
 
 
@@ -512,7 +560,6 @@
                             </p>
 
 
-
                             <div class="product-bottom">
 
 
@@ -528,6 +575,7 @@
                                 >
                                     In den Warenkorb
                                 </button>
+
 
                             </div>
 
@@ -554,7 +602,6 @@
                         </div>
 
 
-
                         <div class="product-info">
 
 
@@ -577,7 +624,6 @@
                             </p>
 
 
-
                             <div class="product-bottom">
 
 
@@ -593,6 +639,7 @@
                                 >
                                     In den Warenkorb
                                 </button>
+
 
                             </div>
 
@@ -641,7 +688,6 @@
                         </p>
 
                     </div>
-
 
 
                     <a
@@ -755,22 +801,22 @@
                     </h4>
 
 
-                    <a href="#products">
+                    <a href="category.html?category=smartphones">
                         Smartphones
                     </a>
 
 
-                    <a href="#products">
+                    <a href="category.html?category=laptops">
                         Laptops
                     </a>
 
 
-                    <a href="#products">
+                    <a href="category.html?category=audio">
                         Audio
                     </a>
 
 
-                    <a href="#products">
+                    <a href="category.html?category=smart-home">
                         Smart Home
                     </a>
 
@@ -937,7 +983,6 @@
             </div>
 
 
-
             <!-- Produkte -->
 
             <div
@@ -953,7 +998,6 @@
 
         <div class="cart-footer">
 
-
             <div class="cart-total">
 
                 <span>
@@ -967,7 +1011,6 @@
             </div>
 
 
-
             <button
                 class="cart-checkout"
                 id="cartCheckout"
@@ -977,12 +1020,8 @@
             </button>
 
 
-
             <p class="cart-demo">
-
-                Demo-Shop – es findet keine echte
-                Bestellung statt.
-
+                Demo-Shop – es findet keine echte Bestellung statt.
             </p>
 
         </div>
@@ -1002,11 +1041,14 @@
 
     <script>
 
-        window.addEventListener("load", function () {
+        window.addEventListener(
+            "load",
+            function () {
 
-            window.scrollTo(0, 0);
+                window.scrollTo(0, 0);
 
-        });
+            }
+        );
 
     </script>
 
