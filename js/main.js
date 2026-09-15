@@ -125,9 +125,9 @@ const cartCountElement =
 const products = {
 
     "darkphone-x1-pro": {
-        name: "DarkPhone X1 Pro",
-        price: 999,
-        image: "images/darkphone-x1-pro.png"
+        name: "ALVION X10 Ultra",
+        price: 1599,
+        image: "images/alvion-x10-ultra.png"
     },
 
     "darkbook-14": {
