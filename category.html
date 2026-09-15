@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="DarkSystems – Kategorie"
+    >
+
+    <title>DarkSystems – Kategorie</title>
+
+    <script>
+        if ("scrollRestoration" in history) {
+            history.scrollRestoration = "manual";
+        }
+    </script>
+
+    <link
+        rel="icon"
+        href="images/favicon.png"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <a
+                href="index.html"
+                class="logo"
+                aria-label="DarkSystems Startseite"
+            >
+
+                <span class="logo-mark">
+                    D
+                </span>
+
+                <span>
+                    DarkSystems
+                </span>
+
+            </a>
+
+
+            <nav
+                class="main-nav"
+                aria-label="Hauptnavigation"
+            >
+
+                <a href="index.html#products">
+                    Produkte
+                </a>
+
+                <a href="index.html#categories">
+                    Kategorien
+                </a>
+
+                <a href="index.html#offers">
+                    Angebote
+                </a>
+
+                <a href="index.html#about">
+                    Über DarkSystems
+                </a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="icon-button"
+                    type="button"
+                    aria-label="Suche"
+                    title="Suche"
+                >
+                    🔍
+                </button>
+
+                <button
+                    class="icon-button"
+                    id="themeToggle"
+                    type="button"
+                    aria-label="Dark Mode"
+                    title="Dark / Light Mode"
+                >
+                    🌙
+                </button>
+
+                <button
+                    class="icon-button cart-button"
+                    type="button"
+                    aria-label="Warenkorb"
+                    title="Warenkorb"
+                >
+                    🛒
+
+                    <span
+                        class="cart-count"
+                        id="cartCount"
+                    >
+                        0
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="products">
+
+            <div class="container">
+
+                <h1
+                    class="section-title"
+                    id="categoryTitle"
+                >
+                    Kategorie
+                </h1>
+
+                <p
+                    class="section-subtitle"
+                    id="categorySubtitle"
+                >
+                    Produkte von DarkSystems.
+                </p>
+
+
+                <div
+                    class="product-grid"
+                    id="categoryProducts"
+                ></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 DarkSystems
+                </span>
+
+                <span>
+                    Nicht-kommerzielles Demo-Projekt
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+
+        const products = [
+
+            {
+                id: "darkphone-x1-pro",
+                name: "DarkPhone X1 Pro",
+                category: "smartphones",
+                categoryName: "Smartphone",
+                description:
+                    "Maximale Performance. Präzise Kameras. Minimalistisches Design.",
+                price: "999,00 €",
+                image: "images/darkphone-x1-pro.png"
+            },
+
+            {
+                id: "darkbook-14",
+                name: "DarkBook 14",
+                category: "laptops",
+                categoryName: "Laptop",
+                description:
+                    "Dünn, leistungsstark und bereit für produktives Arbeiten.",
+                price: "1.099,00 €",
+                image: "images/darkbook-14.png"
+            },
+
+            {
+                id: "darkbuds-3",
+                name: "DarkBuds 3",
+                category: "audio",
+                categoryName: "Audio",
+                description:
+                    "Klarer Klang, aktive Geräuschunterdrückung und Komfort.",
+                price: "149,00 €",
+                image: "images/darkbuds-3.png"
+            }
+
+        ];
+
+
+        const params =
+            new URLSearchParams(window.location.search);
+
+        const category =
+            params.get("category") || "smartphones";
+
+
+        const categoryData = {
+
+            smartphones: {
+                title: "Smartphones",
+                subtitle:
+                    "Entdeckt unsere Smartphones."
+            },
+
+            laptops: {
+                title: "Laptops",
+                subtitle:
+                    "Leistungsstarke Geräte für produktives Arbeiten."
+            },
+
+            audio: {
+                title: "Audio",
+                subtitle:
+                    "Klarer Klang und moderner Komfort."
+            },
+
+            "smart-home": {
+                title: "Smart Home",
+                subtitle:
+                    "Smarte Technologie für Euer Zuhause."
+            }
+
+        };
+
+
+        const currentCategory =
+            categoryData[category] ||
+            categoryData.smartphones;
+
+
+        document.title =
+            "DarkSystems – " +
+            currentCategory.title;
+
+
+        document.getElementById(
+            "categoryTitle"
+        ).textContent =
+            currentCategory.title;
+
+
+        document.getElementById(
+            "categorySubtitle"
+        ).textContent =
+            currentCategory.subtitle;
+
+
+        const container =
+            document.getElementById(
+                "categoryProducts"
+            );
+
+
+        const filteredProducts =
+            products.filter(function (product) {
+
+                return product.category === category;
+
+            });
+
+
+        if (filteredProducts.length === 0) {
+
+            container.innerHTML = `
+                <div class="demo-notice">
+                    <strong>
+                        Noch keine Produkte verfügbar
+                    </strong>
+
+                    <br>
+
+                    Für diese Kategorie sind
+                    aktuell keine Geräte vorhanden.
+                </div>
+            `;
+
+        } else {
+
+            filteredProducts.forEach(function (product) {
+
+                container.innerHTML += `
+
+                    <article class="product-card">
+
+                        <div class="product-image">
+
+                            <img
+                                src="${product.image}"
+                                alt="${product.name}"
+                            >
+
+                        </div>
+
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                ${product.categoryName}
+                            </span>
+
+                            <h3 class="product-name">
+                                ${product.name}
+                            </h3>
+
+                            <p class="product-description">
+                                ${product.description}
+                            </p>
+
+                            <div class="product-bottom">
+
+                                <span class="product-price">
+                                    ${product.price}
+                                </span>
+
+                                <button
+                                    class="product-button"
+                                    type="button"
+                                    data-product="${product.id}"
+                                >
+                                    In den Warenkorb
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                `;
+
+            });
+
+        }
+
+    </script>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
