@@ -18,18 +18,59 @@
     <title>DarkSystems – Kategorie</title>
 
 
-    <!-- Scrollposition beim Reload zurücksetzen -->
+    <!-- =================================================
+         THEME VOR DEM ERSTEN RENDER SETZEN
+         ================================================= -->
+
+    <script>
+
+        (function () {
+
+            const savedTheme =
+                localStorage.getItem("darkSystemsTheme");
+
+            if (
+                savedTheme === "dark" ||
+                savedTheme === "light"
+            ) {
+
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    savedTheme
+                );
+
+            } else {
+
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    "light"
+                );
+
+            }
+
+        })();
+
+    </script>
+
+
+    <!-- =================================================
+         SCROLLPOSITION
+         ================================================= -->
 
     <script>
 
         if ("scrollRestoration" in history) {
+
             history.scrollRestoration = "manual";
+
         }
 
     </script>
 
 
-    <!-- Favicon -->
+    <!-- =================================================
+         FAVICON
+         ================================================= -->
 
     <link
         rel="icon"
@@ -37,7 +78,9 @@
     >
 
 
-    <!-- Main CSS -->
+    <!-- =================================================
+         MAIN CSS
+         ================================================= -->
 
     <link
         rel="stylesheet"
@@ -512,12 +555,12 @@
 
         /*
          * ---------------------------------------------------
-         * Produktdaten für die Kategorie-Seiten
+         * Produktdaten
          * ---------------------------------------------------
          *
-         * Absichtlich NICHT "products" genannt,
-         * da main.js bereits eine Variable namens
-         * "products" verwendet.
+         * Der Name "categoryProductsData" ist absichtlich
+         * gewählt, damit es keinen Konflikt mit der
+         * "products"-Variable aus main.js gibt.
          */
 
         const categoryProductsData = [
@@ -581,7 +624,7 @@
 
         /*
          * ---------------------------------------------------
-         * Kategorie aus der URL lesen
+         * Kategorie aus URL lesen
          * ---------------------------------------------------
          */
 
@@ -650,7 +693,7 @@
 
         /*
          * ---------------------------------------------------
-         * Aktuelle Kategorie bestimmen
+         * Aktuelle Kategorie
          * ---------------------------------------------------
          */
 
@@ -674,7 +717,7 @@
 
         /*
          * ---------------------------------------------------
-         * Überschrift setzen
+         * Überschrift
          * ---------------------------------------------------
          */
 
@@ -687,7 +730,7 @@
 
         /*
          * ---------------------------------------------------
-         * Beschreibung setzen
+         * Beschreibung
          * ---------------------------------------------------
          */
 
@@ -713,7 +756,7 @@
 
         /*
          * ---------------------------------------------------
-         * Produkte nach Kategorie filtern
+         * Produkte filtern
          * ---------------------------------------------------
          */
 
@@ -846,7 +889,9 @@
 
 
 
-    <!-- Scroll nach oben -->
+    <!-- =====================================================
+         SCROLL NACH OBEN
+         ===================================================== -->
 
     <script>
 
