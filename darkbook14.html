@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ALVION X10 Ultra – Flaggschiff-Konzept von DarkSystems.">
+<title>DarkBook 14 – DarkSystems</title>
+<script>
+(function () {
+    const savedTheme = localStorage.getItem("darkSystemsTheme");
+    document.documentElement.setAttribute(
+        "data-theme",
+        savedTheme === "dark" || savedTheme === "light" ? savedTheme : "light"
+    );
+})();
+</script>
+<script>
+if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+</script>
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.product-detail { padding: 80px 0 100px; }
+.product-detail-hero {
+    display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:70px; align-items:center; margin-bottom:100px;
+}
+.product-detail-image {
+    background:var(--bg-secondary); border-radius:var(--radius-large);
+    padding:45px; display:flex; align-items:center; justify-content:center;
+    min-height:520px;
+}
+.product-detail-image img {
+    display:block; width:100%; max-width:520px; max-height:620px; object-fit:contain;
+}
+.product-detail-category {
+    display:inline-block; margin-bottom:14px; color:var(--accent);
+    font-size:.85rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em;
+}
+.product-detail-title {
+    margin:0 0 18px; font-size:clamp(2.5rem,5vw,4.5rem);
+    line-height:1; letter-spacing:-.04em;
+}
+.product-detail-subtitle {
+    margin:0 0 28px; color:var(--text-secondary);
+    font-size:1.15rem; line-height:1.7;
+}
+.product-detail-price { margin-bottom:24px; font-size:1.8rem; font-weight:700; }
+.product-detail-actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+.product-detail-actions .product-button { border:0; cursor:pointer; font:inherit; }
+.product-detail-note { margin-top:14px; color:var(--text-muted); font-size:.9rem; }
+.specs-heading { margin-bottom:35px; text-align:center; }
+.specs-heading h2 { margin:0 0 10px; font-size:clamp(2rem,4vw,3rem); }
+.specs-heading p { margin:0; color:var(--text-secondary); }
+.specs-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.spec-card {
+    padding:26px; background:var(--bg-card); border:1px solid var(--border);
+    border-radius:var(--radius-medium);
+}
+.spec-card strong {
+    display:block; margin-bottom:8px; color:var(--accent);
+    font-size:.8rem; text-transform:uppercase; letter-spacing:.07em;
+}
+.spec-card span { color:var(--text); line-height:1.6; }
+@media (max-width:900px) {
+    .product-detail-hero { grid-template-columns:1fr; gap:40px; margin-bottom:70px; }
+    .product-detail-image { min-height:400px; }
+    .specs-grid { grid-template-columns:1fr; }
+}
+@media (max-width:600px) {
+    .product-detail { padding:45px 0 70px; }
+    .product-detail-image { min-height:330px; padding:25px; }
+    .product-detail-actions { flex-direction:column; align-items:stretch; }
+    .product-detail-actions .button,
+    .product-detail-actions .product-button { width:100%; text-align:center; }
+}
+</style>
+</head>
+
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<a href="index.html" class="logo" aria-label="DarkSystems Startseite">
+<span class="logo-mark">D</span><span>DarkSystems</span>
+</a>
+<nav class="main-nav" aria-label="Hauptnavigation">
+<a href="index.html#products">Produkte</a>
+<a href="index.html#categories">Kategorien</a>
+<a href="index.html#offers">Angebote</a>
+<a href="index.html#about">Über DarkSystems</a>
+</nav>
+<div class="header-actions">
+<button class="icon-button" type="button" aria-label="Suche" title="Suche">🔍</button>
+<button class="icon-button" id="themeToggle" type="button" aria-label="Dark Mode" title="Dark / Light Mode">🌙</button>
+<button class="icon-button cart-button" type="button" aria-label="Warenkorb" title="Warenkorb">
+🛒 <span class="cart-count" id="cartCount">0</span>
+</button>
+<button class="icon-button mobile-menu-button" type="button" aria-label="Menü öffnen" title="Menü">☰</button>
+</div>
+</div>
+</header>
+
+<main>
+<section class="product-detail">
+<div class="container">
+
+<div class="product-detail-hero">
+<div class="product-detail-image">
+<img src="images/alvion-x10-ultra.png" alt="ALVION X10 Ultra">
+</div>
+
+<div class="product-detail-info">
+<span class="product-detail-category">Laptop · DarkBook</span>
+<h1 class="product-detail-title">DarkBook 14</h1>
+<p class="product-detail-subtitle">
+Ein Business-LaptopN<br>
+<strong>(by DarkSystems)</strong>
+</p>
+<div class="product-detail-price">1.099,00 €</div>
+<div class="product-detail-actions">
+<button class="product-button button button-primary" type="button" data-product="darkbook-14
+In den Warenkorb
+</button>
+<a href="category.html?category=laptops" class="button button-secondary">
+Alle Laptops
+</a>
+</div>
+<p class="product-detail-note">Nicht-kommerzielles Konzept · Demo-Shop</p>
+</div>
+</div>
+
+<section>
+<div class="specs-heading">
+<h2>Technische Daten</h2>
+<p>Das DarkBook 14 im Detail.</p>
+</div>
+
+<div class="specs-grid">
+<div class="spec-card"><strong>Prozessor</strong><span>Intel Ultra 7 155H</span></div>
+<div class="spec-card"><strong>Grafikeinheit</strong><span>Inter Arc Graphics</span>
+<div class="spec-card"><strong>Display</strong><span>16:9, 14,2" LTPO AMOLED, 165Hz, 3840x2160</span></div>
+<div class="spec-card"><strong>Akku</strong><span>Silizium-Carbon 7018mAh (80Wh), 120W Moon-Charge (20V/6A) (0-100% in 60Min)</span></div>
+<div class="spec-card"><strong>Speicher</strong><span>Bis zu 24GB RAM + 2TB Speicher</span></div>
+<div class="spec-card"><strong>Selfie</strong><span>32MP (f/2.0, 1/2,5"), Wide-Angle</span></div>
+<div class="spec-card"><strong>Konnektivität</strong><span>5G, WiFi 7, Bluetooth 6.0, NFC (Under Display für DarkShare)</span></div>
+<div class="spec-card"><strong>Anschlüsse</strong><span>Thunderbolt 5 (PD3.1)</span></div>
+<div class="spec-card"><strong>Rahmen</strong><span>Titan</span></div>
+<div class="spec-card"><strong>Rückseite</strong><span>Carbon</span></div>
+</div>
+</section>
+
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a href="index.html" class="logo"><span class="logo-mark">D</span><span>DarkSystems</span></a>
+<p>Technology. Reimagined.<br>Das DarkSystems Ökosystem.</p>
+</div>
+<div class="footer-column">
+<h4>Produkte</h4>
+<a href="category.html?category=smartphones">Smartphones</a>
+<a href="category.html?category=laptops">Laptops</a>
+<a href="category.html?category=audio">Audio</a>
+<a href="category.html?category=smart-home">Smart Home</a>
+</div>
+<div class="footer-column">
+<h4>Service</h4>
+<a href="#">Hilfe</a><a href="#">Kontakt</a><a href="#">Versand</a><a href="#">Rückgabe</a>
+</div>
+<div class="footer-column">
+<h4>DarkSystems</h4>
+<a href="index.html#about">Über uns</a><a href="#">Datenschutz</a><a href="#">Impressum</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 DarkSystems. Alle Rechte vorbehalten</span>
+<span>Nicht-kommerzielles Demo-Projekt</span>
+</div>
+</div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-panel" id="cartPanel" aria-label="Warenkorb">
+<div class="cart-header">
+<div><h2>Warenkorb</h2><span id="cartItemCount">0 Produkte</span></div>
+<button class="cart-close" id="cartClose" type="button" aria-label="Warenkorb schließen">×</button>
+</div>
+<div class="cart-content">
+<div class="cart-empty" id="cartEmpty">
+<div class="cart-empty-icon">🛒</div>
+<h3>Dein Warenkorb ist leer</h3>
+<p>Füge Produkte hinzu, um sie hier zu sehen.</p>
+</div>
+<div class="cart-items" id="cartItems"></div>
+</div>
+<div class="cart-footer">
+<div class="cart-total"><span>Gesamtsumme</span><strong id="cartTotal">0,00 €</strong></div>
+<button class="cart-checkout" id="cartCheckout" type="button">Zur Kasse</button>
+<p class="cart-demo">Demo-Shop – es findet keine echte Bestellung statt.</p>
+</div>
+</aside>
+
+<script src="js/main.js"></script>
+<script>
+window.addEventListener("load", function () { window.scrollTo(0, 0); });
+</script>
+</body>
+</html>
